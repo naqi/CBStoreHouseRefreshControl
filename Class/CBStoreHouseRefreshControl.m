@@ -151,12 +151,12 @@ NSString *const yKey = @"y";
 #pragma mark Private Methods
 
 - (void)startLoading {
-    UIEdgeInsets newInsets = self.scrollView.contentInset;
-    newInsets.top = self.originalTopContentInset + self.dropHeight;
+//     UIEdgeInsets newInsets = self.scrollView.contentInset;
+//     newInsets.top = self.originalTopContentInset + self.dropHeight;
     CGPoint contentOffset = self.scrollView.contentOffset;
     
     [UIView animateWithDuration:0 animations:^(void) {
-        self.scrollView.contentInset = newInsets;
+//         self.scrollView.contentInset = newInsets;
         self.scrollView.contentOffset = contentOffset;
     }];
     
@@ -274,12 +274,12 @@ NSString *const yKey = @"y";
 {
     self.state = CBStoreHouseRefreshControlStateDisappearing;
     
-    UIEdgeInsets newInsets = self.scrollView.contentInset;
-    newInsets.top = self.originalTopContentInset;
+//     UIEdgeInsets newInsets = self.scrollView.contentInset;
+//     newInsets.top = self.originalTopContentInset;
     
     if (animated) {
         [UIView animateWithDuration:kdisappearDuration animations:^(void) {
-            self.scrollView.contentInset = newInsets;
+//             self.scrollView.contentInset = newInsets;
         } completion:^(BOOL finished) {
             self.state = CBStoreHouseRefreshControlStateIdle;
             [self.displayLink invalidate];
@@ -289,7 +289,7 @@ NSString *const yKey = @"y";
         self.state = CBStoreHouseRefreshControlStateIdle;
         [self.displayLink invalidate];
         self.disappearProgress = 1;
-        self.scrollView.contentInset = newInsets;
+//         self.scrollView.contentInset = newInsets;
     }
     
     for (BarItem *barItem in self.barItems) {
